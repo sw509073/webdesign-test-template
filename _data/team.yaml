@@ -340,7 +340,7 @@
 - timestamp: 3/11/2024
   name: Satvik Wazir
   position: Undergraduate student
-  email: abs
+  email: aba
   bio1: Web Development
   bio2: Game Development
   bio3: App development
@@ -353,4 +353,21 @@
   acknowledgement: I understand and agree
   alumni: 0
   alumni_current: Applying for intern
+  year: '2024'
+- timestamp: 4/12/2024
+  name: Puspendra Singh
+  position: Undergraduate student
+  email: xys
+  bio1: DSA
+  bio2: OOPS
+  bio3: ML
+  bio4: DBMS
+  image: >-
+    https://drive.google.com/thumbnail?id=1MI8R_8TO-Hoo5y3k305AsZwWDuZ50CEr&sz=w300
+  affiliation: IIEST(IT)
+  display: 1
+  undefined: ''
+  acknowledgement: I understand and agree
+  alumni: 0
+  alumni_current: Pusruing Btech
   year: '2024'
