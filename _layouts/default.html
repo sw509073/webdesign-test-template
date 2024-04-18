@@ -7,12 +7,119 @@
 
     <div class="container-fluid">
       <div class="row">
+         <!-- Search Section Button -->
+ <div class="container-fluid">
+  <div class="row justify-content-center search-container">
+    <div class="col-md-11 text-center">
+        <input type="text" class="form-control" id="searchInput" placeholder="Search by name...">
+    </div>
+    <div class="col-md-1 text-center"  id="searchInput">
+        <span class="input-group-text" id="searchIcon">
+          <i class="fa fa-search" style="font-size:35px"></i> <!-- Assuming you're using Font Awesome -->
+        </span>
+    </div>
+  </div>
+
+  <!-- Filter Section Button -->
+  <div class="row justify-content-center">
+
+    <div class="col-md-12 text-center position-filter-container">
+
+      <h3>Filter By Position or Search Bar:</h3>
+
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="positionDropdown" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Select Position
+        </button>
+        <button class="btn btn-primary toggle-search-button">Toggle Search</button>
+        <div class="dropdown-menu" aria-labelledby="positionDropdown" style="max-height: 400px; overflow-y: auto;">
+          <div id="positionDropdownContent" style="width: 220px;">
+            <div id="filter-options">
+              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
+                  value="All">  All</label>
+              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
+                  value="PhD student">  PhD student</label>
+              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
+                  value="MS(R) student">  MS(R) student</label>
+              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
+                  value="Undergraduate student">  UG student</label>
+              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
+                  value="MSc student">  MSc student</label>
+              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
+                    value="Assistant Professor">  Assistant Professor</label>
+              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
+                      value="Research Assistant"> Research Assistant</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
         {{ content }}
       </div>
     </div>
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{{ site.url }}{{ site.baseurl }}/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
+<script>
+   // used jQuery
+  function filterMembers() {
+
+    // Get the selected positions
+    var selectedPositions = [];
+    $('.position-filter:checked').each(function () {
+      selectedPositions.push($(this).val());
+    });
+
+    // Show or hide members based on selected positions
+    $('.member').each(function () {
+      var position = $(this).data('position');
+      if (selectedPositions.length === 0 || selectedPositions.includes(position) || selectedPositions.includes('All')) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  }
+
+  // Event listener: checkbox change
+  $('.position-filter').change(function () {
+    filterMembers();
+  });
+
+  //Search input processing
+  $('#searchInput').on('input', function () {
+    var searchText = $(this).val().toLowerCase();
+    $('.member').each(function () {
+      var name = $(this).data('name').toLowerCase();
+      if (name.includes(searchText)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+
+  $(document).ready(function () {
+  // Toggle search input and icon
+  $('.toggle-search-button').click(function () {
+    $('.search-container').toggle();
+  });
+});
+  // Initially filter members based on default selected positions
+  filterMembers();
+</script>
+
+
+
 
   </body>
 
