@@ -45,10 +45,10 @@ permalink: /test/
 {% assign even_odd = number_printed | modulo: 2 %}
 
 {% if even_odd == 0 %}
-<div class="row">
+<div class="row" id="teamMember">
 {% endif %}
 
-<div class="col-sm-6 clearfix">
+<div class="col-sm-6 member" data-position="{{ member.position }}" data-name = "{{member.name}}" >
   <img src="{{ member.image }}" class="img-responsive" width="35%" style="float: left" />
   <h4>{{ member.name }}</h4>
   <i>{{ member.position }}, {{ member.affiliation }} <br>email: {{ member.email }}</i>
@@ -88,7 +88,7 @@ permalink: /test/
 {% for member in sorted_members %}
 {% if member.display == 1 and member.alumni == 1 %}
 
-<div class="col-sm-12 clearfix">
+<div class="col-sm-6 member" data-position="{{ member.position }}" data-name = "{{member.name}}" id="teamMember">
   <img src="{{ member.image }}" class="img-thumbnail" width="100px" style="float: left" />
   <h4>{{ member.name }}</h4>
   <i>{{ member.position }}, {{ member.affiliation }} ({{ member.year }}) <br>email: {{ member.email }}</i>
