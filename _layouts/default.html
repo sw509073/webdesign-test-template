@@ -7,55 +7,6 @@
 
     <div class="container-fluid">
       <div class="row">
-         <!-- Search Section Button -->
- <div class="container-fluid">
-  <div class="row justify-content-center search-container">
-    <div class="col-md-11 text-center">
-        <input type="text" class="form-control" id="searchInput" placeholder="Search by name...">
-    </div>
-    <div class="col-md-1 text-center"  id="searchInput">
-        <span class="input-group-text" id="searchIcon">
-          <i class="fa fa-search" style="font-size:35px"></i> <!-- Assuming you're using Font Awesome -->
-        </span>
-    </div>
-  </div>
-
-  <!-- Filter Section Button -->
-  <div class="row justify-content-center">
-
-    <div class="col-md-12 text-center position-filter-container">
-
-      <h3>Filter By Position or Search Bar:</h3>
-
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="positionDropdown" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Select Position
-        </button>
-        <button class="btn btn-primary toggle-search-button">Toggle Search</button>
-        <div class="dropdown-menu" aria-labelledby="positionDropdown" style="max-height: 400px; overflow-y: auto;">
-          <div id="positionDropdownContent" style="width: 220px;">
-            <div id="filter-options">
-              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
-                  value="All">  All</label>
-              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
-                  value="PhD student">  PhD student</label>
-              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
-                  value="MS(R) student">  MS(R) student</label>
-              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
-                  value="Undergraduate student">  UG student</label>
-              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
-                  value="MSc student">  MSc student</label>
-              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
-                    value="Assistant Professor">  Assistant Professor</label>
-              <label class="dropdown-item checkbox-label"><input type="checkbox" class="position-filter"
-                      value="Research Assistant"> Research Assistant</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
         {{ content }}
       </div>
     </div>
