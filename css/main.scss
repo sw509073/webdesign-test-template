@@ -8,9 +8,46 @@ img { margin-bottom: 24px;
     border-radius:2%;
 }
 
+.checkbox-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown-item {
+    padding: 5px 12px; /* Adjust the values as needed */
+    border-bottom: 0.6px solid rgb(179, 179, 179); /* Add a black border-bottom */
+  }
+
+  /* Remove border-bottom from the last dropdown-item */
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.position-filter-container {
+    background-color: #fcfcfc; /* Grey background color */
+    border: 1.5px solid #909090; /* Light grey border */
+    box-shadow: 12px 12px 12px rgba(0,0,0,0.1); /* Glowish border */
+    padding: 20px; /* Add padding for spacing */
+}
+
+
+#teamMember{
+    border: 1.5px solid #909090;
+}
+
+#searchInput{
+    border: 1.5px solid #909090;
+    background-color: white;
+}
 
 body {
 	padding-top: 70px;
+	background-color: #e4e4e4;
 }
 
 figcaption {
